@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speedy Summarizer</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+   <header>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <div class="logo-box"> 
+                <img src="image3.jpg" alt="icon" style="border-radius: 50%;">
+            </div>
+        </div>
+        <h2 id="mainh2">SPEEDY SUMMARIZER</h2>
+        <div class="vv">
+            <ul>
+                <!-- Login button or user's name will be dynamically added here -->
+            </ul>
+        </div>
+    </nav>
+</header>
+<section id="hero">
+    <p>Summarize Any PDF or Document Instantly</p>
+    <div id="main_container">
+        <div class="circular-image-container">
+            <img src="Summary.png" alt="Summary Image" class="circular-image" onclick="redirectToSummarizing()">
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <h2>About Speedy Summarizer</h2>
+    <p>Speedy summarizer tool is powered by artificial intelligence and provides concise summaries of any content, including PDF, general documents, articles, audio files, or presentations. No more shifting through pages of information or listening to lengthy recordings to extract key points. Just upload your files and let the AI do the work. The AI summary generator reads through the file, identifies the main themes and the most essential details, and produces a resume that captures the essence of the content. With Speedy's AI summarizer you turn the tedious process of summarizing into a thing of the past.</p>
+</section>
+
+<div id="same">
+    <section class="same">
+        <div id ="key">
+            <br>
+            <h3>Key Features of Speedy Summarizer</h3>
+            <ul type="none">
+                <li >Accurate AI Summary</li>
+                <li>Time-Efficient Summarization</li>
+                <li>Multi-Format Support</li>
+            </ul>
+            <br>
+            <br>
+            <img src="image1.jpg"  height="150" width="250px">
+        </div>
+    </section>
+
+    
+        <div id="adv">
+            <br>
+            <h3>Speedy AI's Advantages for Summary Generator</h3>
+            <ul type="none">
+                <li>Efficient Information Extraction</li>
+                <li>Cross-Document Analysis</li>
+                <li>Customizable Summaries</li>
+            </ul>
+            <br>
+            <br>
+            <img src="image2.jpg"  height="150" width="250px">
+        </div>
+    
+</div>
+
+<section id="case-study">
+    <div id="case">
+        <h2>Case Study</h2>
+        <p>Speed up Learning Processes for Academics and Students</p>
+        <p>Postgraduate students, overwhelmed by vast academic materials, turned to Speedy AI for efficient study. The AI summarizer quickly condensed complex papers into clear summaries, enabling them to grasp key concepts and theories swiftly. This tool significantly saved time and enhanced understanding, proving invaluable for navigating their rigorous coursework and research, thus improving their overall academic experience and productivity.</p>
+    </div>
+</section>
+
+<section id="testimonials">
+    <div id="test">
+        <h2>Testimonials</h2>
+        <blockquote>
+            "Speedy AI has transformed my research workflow. It efficiently summarizes complex texts, enhancing my focus on critical neuroscience analysis"<br>
+            <p><Ethan Parker><br></Ethan>Research Assistant in Computational Neuroscience</cite></p>
+        </blockquote>
+    </div>
+</section>
+
+<section id="try-now">
+    <h2>Try Speedy AI for Summary</h2>
+    <p>Start for free — upgrade anytime.</p>
+    <p>Joining as an organization? 
+        <br>
+        <a href="#">Contact Sales</a></p>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <div class="logo-container">
+            <img src=image3.jpg alt="Logo">
+            <p>Speedy Summarizer</p>
+        </div>
+    </div>
+    <p>Copyright © 2024 Speedy Summarizer Inc. All rights reserved.</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const userSection = document.querySelector(".vv ul");
+
+    // Retrieve user data from localStorage
+    const user = localStorage.getItem("user");
+
+    if (user) {
+        // If user is logged in, display their name instead of the "Login" button
+        userSection.innerHTML = `<li><a href="#">${user}</a></li>`;
+    }
+});
+
+function redirectToSummarizing() {
+    window.location.href = "Summarizing.html";
+}
+</script>
+
+</body>
+</html>

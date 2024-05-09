@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('book1.jpg'); /* Add your background image URL here */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: rgba(255,255,255); /* Adjusted opacity for mixed color */
+            padding: 30px;
+            border-radius: 10px;
+            height: 80%;
+            max-width: 20%; /* Adjust the width as needed */
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            left: 50%; /* Center horizontally */
+            top: 50%; /* Center vertically */
+            transform: translate(-50%, -50%); /* Center horizontally and vertically */
+        }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: calc(100% - 10px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn {
+            background-color: #161c23;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #000000;
+        }
+        .alert {
+            background-color: #f44336;
+            color: #fff;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .logo-img {
+            margin-bottom: 20px; /* Add some space between the logo and the login form */
+            width: 50%; /* Set the width of the logo */
+            height: 30; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="image3.jpg" alt="Logo" class="logo-img"> <!-- Logo image -->
+        <p>Speedy Summarizer<p>
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+        <p>Don't have an account? <a href="Web Signup.html">Signup</a></p>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Retrieve form data
+            var email = document.getElementById('email').value.trim();
+            var password = document.getElementById('password').value.trim();
+
+            // Retrieve user data from local storage
+            var userData = JSON.parse(localStorage.getItem(email));
+
+            // Validate user credentials
+            if (!userData || userData.password !== password) {
+                showAlert('Invalid email or password.', 'error');
+                return;
+            }
+
+            // Store the user's full name in localStorage
+            localStorage.setItem("user", userData.fullName);
+
+            // Redirect to home page after successful login
+            showAlert('Login successful! Redirecting to home page...', 'success');
+            setTimeout(function() {
+                window.location.href = "main.html";
+            }, 2000);
+        });
+
+        function showAlert(message, type) {
+            var alertDiv = document.createElement('div');
+            alertDiv.classList.add('alert');
+            alertDiv.classList.add(type);
+            alertDiv.textContent = message;
+
+            var container = document.querySelector('.container');
+            container.insertBefore(alertDiv, container.firstChild);
+
+            // Remove alert after 3 seconds
+            setTimeout(function() {
+                alertDiv.remove();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
