@@ -67,6 +67,35 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+          @media (max-width: 1024px) {
+            .container {
+                padding: 20px 10px;
+            }
+
+            .summary-header, .audio-header {
+                font-size: 20px;
+                padding: 10px;
+            }
+
+            .summary-content, .audio-content {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px 5px;
+            }
+
+            .summary-header, .audio-header {
+                font-size: 18px;
+                padding: 8px;
+            }
+
+            .summary-content, .audio-content {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
